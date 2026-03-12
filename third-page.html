@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+
+<html>
+
+    <head>
+
+    <title>Most expensive cars from every brand</title>
+
+    <meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- FAVICON -->
+
+<link rel="icon" href="https://i.postimg.cc/3NWG3npT/Bugatti-Chiron-Super-Sport-Golden-Era.jpg" type="image/png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+
+        <style>
+
+            body {
+
+    margin:0;
+
+    font-family: sans-serif;
+
+    background: linear-gradient(180deg,#000000,#0a0a0a,#111111);
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+/* HERO SECTION */
+
+.img2 {
+
+    height: 80vh;
+
+    background-image: url('https://i.postimg.cc/8zcQzBmf/3d-explosion-with-light-background-23-2148221339.jpg');
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    gap: 20px;
+
+}
+
+.title2, .title-shine {
+
+    font-weight: bold;
+
+}
+
+/* GOLD TEXT ANIMATION */
+
+.title2 {
+
+    font-size: 40px;
+
+    background: linear-gradient(90deg, #ffd700, #fff2a8, #ffd700);
+
+    background-size: 200%;
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation: goldShine 3s linear infinite;
+
+    text-shadow: 0 0 10px rgba(255,215,0,0.7);
+
+    text-align:center;
+
+    position:relative;
+
+    margin-top:-0px;
+
+    
+
+}
+
+.title-shine {
+
+    font-size: 50px;
+
+    background: linear-gradient(90deg, #8a6a00, #ffd700, #fff4b0, #ffd700, #8a6a00);
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation: shine 4s linear infinite;
+
+    font-family:pacifico-regular;
+
+}
+
+@keyframes goldShine {
+
+    0%{ background-position:-200%; }
+
+    100%{ background-position:200%; }
+
+}
+
+@keyframes shine {
+
+    0%{ background-position:-200% center; }
+
+    100%{ background-position:200% center; }
+
+}
+
+/* ===== BRANDS ===== */
+
+.brands {
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background:#111;
+
+}
+
+.brand-title { font-size:32px; color:gold; margin-bottom:30px; }
+
+.brand-container {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:40px;
+
+}
+
+.brand-container img {
+
+    width:80px;
+
+    transition:0.4s;
+
+}
+
+.brand-container img:hover {
+
+    filter:grayscale(0%);
+
+    transform:scale(1.2);
+
+}
+
+/* ===== FEATURED CAR ===== */
+
+.featured-car {
+
+    background:#111;
+
+    padding:60px 20px;
+
+    text-align:center;
+
+}
+
+.featured-title { font-size:34px; color:gold; margin-bottom:40px; }
+
+.featured-box {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:40px;
+
+}
+
+.featured-box img {
+
+    width:280px;
+
+    max-width:90%;
+
+    border-radius:15px;
+
+    box-shadow:0 0 20px rgba(255,215,0,0.5);
+
+}
+
+.featured-text {
+
+    max-width:100%;
+
+    color:white;
+
+    font-size:18px;
+
+    line-height:1.6;
+
+    text-align:left;
+
+}
+
+@media(max-width:768px){
+
+    .featured-box { flex-direction: column; }
+
+}
+
+/* ===== CAR CARD ===== */
+
+.car-cards-container {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    padding: 40px 20px;
+
+    background:#111;
+
+    
+
+}
+
+.car-card {
+
+    position: relative;
+
+    width: 310px;
+
+    height: 310px;
+
+    background: #111;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 0 20px rgba(255,215,0,0.4);
+
+    cursor: pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    outline: none;
+
+-webkit-tap-highlight-color: transparent
+
+}
+
+.car-card img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    outline: none;
+
+-webkit-tap-highlight-color: transparent
+
+}
+
+/* SHINE EFFECT ON CLICK */
+
+.car-card::after {
+
+    content:'';
+
+    position: absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:100%;
+
+    background: linear-gradient(120deg, transparent, rgba(224,17,95,1), transparent);
+
+    transform: skewX(-20deg);
+
+    transition: none;
+
+    pointer-events:none;
+
+    outline: none;
+
+-webkit-tap-highlight-color: transparent
+
+}
+
+.car-card.active::after {
+
+    animation: cardShine 0.5s forwards;
+
+}
+
+@keyframes cardShine {
+
+    0%{ left:-100%; }
+
+    100%{ left:100%; }
+
+}
+
+.footer{
+
+background:#0a0a0a;
+
+padding:40px 20px;
+
+text-align:center;
+
+color:#ccc;
+
+border-top:1px solid rgba(255,215,0,0.2);
+
+}
+
+.footer h3{
+
+color:#ffd700;
+
+letter-spacing:2px;
+
+}
+
+.footer a{
+
+color:#ffd700;
+
+text-decoration:none;
+
+}
+
+#particles{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+z-index:0;
+
+}
+
+.particle{
+
+position:absolute;
+
+width:6px;
+
+height:6px;
+
+background:gold;
+
+border-radius:50%;
+
+opacity:0.8;
+
+animation:floatUp linear infinite;
+
+}
+
+@keyframes floatUp{
+
+0%{
+
+transform:translateY(100vh);
+
+opacity:0;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-10vh);
+
+opacity:0;
+
+}
+
+}
+
+.oleo-script-regular {
+
+  font-family: "Oleo Script", system-ui;
+
+  font-weight: 400;
+
+  font-size:30px;
+
+  position:absolute;
+
+}
+
+.oleo-script-bold {
+
+  font-family: "Oleo Script", system-ui;
+
+  font-weight: 700;
+
+  font-style: normal;
+
+}
+
+body{
+
+font-family:Arial;
+
+}
+
+.pacifico-regular{
+
+    font-size:24px;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.pacifico-regular {
+
+    font-family: 'Pacifico', cursive;
+
+}
+
+.shine-text {
+
+    font-size: 60px;
+
+    font-weight: bold;
+
+    background: linear-gradient(
+
+        90deg, 
+
+        #800000,   /* Dark Red base */
+
+        #ff0000,   /* Bright Red shine */
+
+        #800000
+
+    );
+
+    background-size: 200% 100%;
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation: redShine 3s linear infinite;
+
+    text-align: center;
+
+    text-shadow: 0 0 10px rgba(255,0,0,0.6);
+
+}
+
+@keyframes redShine {
+
+    0% {
+
+        background-position: -200% 0;
+
+    }
+
+    100% {
+
+        background-position: 200% 0;
+
+    }
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+.bar a:hover{
+
+color:gold;
+
+text-shadow:0 0 10px gold,0 0 20px gold;
+
+}
+
+.menu-icon{
+
+font-size:30px;
+
+cursor:pointer;
+
+color:white;
+
+position:fixed;
+
+left:20px;
+
+top:15px;
+
+z-index:1001;
+
+}
+
+.side-menu{
+
+position:fixed;
+
+top:0;
+
+left:-250px;
+
+width:250px;
+
+height:500px;
+
+background:black;
+
+padding-top:60px;
+
+transition:0.4s;
+
+z-index:1000;
+
+outline: none;
+
+-webkit-tap-highlight-color: transparent
+
+}
+
+.side-menu a{
+
+display:block;
+
+color:white;
+
+padding:15px;
+
+text-decoration:none;
+
+font-size:18px;
+
+outline: none;
+
+-webkit-tap-highlight-color: transparent
+
+}
+
+.side-menu a:hover{
+
+background:#333;
+
+outline: none;
+
+-webkit-tap-highlight-color: transparent
+
+}
+
+.bar{
+
+position:fixed;
+
+top:0;
+
+width:100%;
+
+height:60px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(0,0,0,0.4);
+
+backdrop-filter:blur(10px);
+
+z-index:1000;
+
+outline: none;
+
+-webkit-tap-highlight-color: transparent
+
+}
+
+.bar a{
+
+color:white;
+
+margin:15px;
+
+text-decoration:none;
+
+font-size:18px;
+
+transition:0.3s;
+
+outline: none;
+
+-webkit-tap-highlight-color: transparent
+
+}
+
+.bar a:hover{
+
+color:gold;
+
+}
+
+body {
+
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background: #111;
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 20px;
+
+}            
+
+        </style>
+
+    </head>
+
+    <body>
+
+    <!-- TOP NAVBAR -->
+
+<div class="bar">
+
+<nav>
+
+<div id="sideMenu" class="side-menu">
+
+<a href="index.html" target="_blank" rel="noopener noreferrer">Back to Main page</a>
+
+<a href="#">Home</a>
+
+<a href="#gallery">Gallery</a> 
+
+<a href="#contact">Contact</a>
+
+<a href="second-page.html" target="_blank" rel="noopener noreferrer">Unique cars</a>
+
+<a href="fourth-page.html" target="_blank" rel="noopener noreferrer">FAQ's</a>
+
+</nav>
+
+<section class="banner">
+
+<div class="banner-content">
+
+<div class="title-shine">ELEGANCE</div>
+
+</section><nav>
+
+<div class="menu-icon" onclick="openMenu()">
+
+☰
+
+</div>
+
+<a href="https://google.com">Google</a>
+
+</nav>
+
+</div>
+
+<!-- HERO -->
+
+<div class="img2">
+
+    <div class="title2">Explore the most expensive cars from every popular luxury car brand</div>
+
+    <div class="title-shine">Extreme Rare cars</div>
+
+</div>
+
+<!-- BRANDS -->
+
+<section class="brands">
+
+    <h2 class="brand-title">Top Luxury Brands</h2>
+
+    <div class="brand-container">
+
+        <img src="https://i.postimg.cc/tg1wVWGY/rolls_royce_logo_11551061380wexqupjdrb_removebg_preview.png" alt="Rolls Royce">
+
+        <img src="https://i.postimg.cc/VNSpbnPb/pagani_automobili_spa_logo_vector_11573940116thqf1o0yxx_removebg_preview.png" alt="Pagani">
+
+        <img src="https://i.postimg.cc/QMBwW1Z5/koenigsegg_logo_vector_eps_ai_11573940113n8tsllrcjq_removebg_preview.png" alt="Koenigsegg">
+
+        <img src="https://i.postimg.cc/fb3p0mQY/hd_lamborghini_logo_transparent_background_701751694774898kpt0kfziis_removebg_preview.png" alt="Lamborghini">
+
+        <img src="https://i.postimg.cc/8zXx5w9M/hd_ferrari_logo_transparent_background_701751694773105xaxoflrdiu_removebg_preview.png" alt="Ferrari">
+
+        <img src="https://i.postimg.cc/7LCdT0rN/hd_bugatti_logo_emblem_png_701751694709250gzffz3oyat_removebg_preview.png" alt="Bugatti">
+
+    </div>
+
+</section>
+
+<!-- CAR CARDS -->
+
+<div id="gallery"></div>
+
+<section class="car-cards-container">
+
+<div class="shine-text">(1955) MERCEDES</div>
+
+    <div class="car-card">
+
+        <img src="https://i.postimg.cc/Zn5dC5Y3/107064120_D140595.jpg" alt="mercedes" position="center">
+
+    </div>
+
+    <div class="title-shine">$142m - $148m</div>
+
+        <div class="pacifico-regular title-shine">
+
+       <ul><li> Extreme Rarity: Only two prototypes were built, both originally retained by Mercedes-Benz.</li>
+
+<li>Unprecedented Provenance: It was designed by and served as the personal company car of Rudolf Uhlenhaut, the chief engineer.</li>
+
+<li>Racing Pedigree & Performance: Based on the W196 R Grand Prix car that won two world championships, it was considered the fastest road-legal car of its time.</li>
+
+<li>Historical Significance: It represents the peak of post-war German engineering and Mercedes' dominance in motorsport.</li>
+
+<li>"Mona Lisa" of Cars: The combination of its beauty, gullwing doors, and unique history has cemented it as the most desirable"holy grail" car for collectors.</li> 
+
+        
+
+        </div>
+
+<section class="car-cards-container">
+
+<div class="shine-text">(1962) FERRARI 250 GTO</div>
+
+    <div class="car-card">
+
+        <img src="https://i.postimg.cc/026z33bX/Can_t.webp" alt="Ferrari" position="center">
+
+    </div>
+
+    <div class="title-shine">$39m - $70m</div>
+
+        <div class="pacifico-regular title-shine">
+
+       <ul><li> Highest Sale Price: $70 million+ (Private sale, 2018).</li>
+
+<li>Highest Auction Price: $51.7 million (Late 2024).</li>
+
+<li><The Buyer: The 2018 record-holder was reportedly bought by David MacNeil, founder of WeatherTech.</li>
+
+<li>Key Features: These vehicles were built between 1962 and 1964 for racing, featuring 3.0-liter V12 engines and rare, hand-crafted bodies.</li>
+
+<li>Provenance: Top-tier examples often include race wins like the Tour de France and high finishes at Le Mans </li></ul>
+
+        </section>
+
+        </div>
+
+<section class="car-cards-container">
+
+<div class="shine-text">Lamborghini Egoista</div>
+
+    <div class="car-card">
+
+        <img src="https://i.postimg.cc/GtmyHm3y/lamborghini_supposedly_sold_the_one_off_egoista_that_they_wanted_to_keep_all_to_themselves_245426_1.jpg" alt="lamborghini" position="center">
+
+    </div>
+
+    <div class="title-shine">$100m  - $117m</div>
+
+        <div class="pacifico-regular title-shine">
+
+        <ul><li>Design Inspiration: The exterior is modeled after Apache helicopters and fighter jets, featuring active aerodynamic panels that adjust for stability.</li>
+
+<li>Cockpit & Interior: A single, central seat is surrounded by a "survival cell" made of carbon fiber and aluminum. The steering wheel must be removed to enter/exit, similar to Formula 1 cars.</li>
+
+<li>Performance: The car is powered by a 5.2-liter V10 engine, producing 600 horsepower.</li>
+
+<li>Features: It includes orange-tinted glass, unique LED lighting, and a head-up display.</li>
+
+<li>Status: It is a non-street-legal, one-of-a-kind, functional prototype, sometimes reported as being valued at over $100 million. </li></ul>
+
+        
+
+        </div>  
+
+        </section>
+
+  <section class="car-cards-container">
+
+<div class="shine-text">Bugatti Type 57SC atlantic</div>
+
+    <div class="car-card">
+
+        <img src="https://i.postimg.cc/qMtNYYzP/ed64eb7c2182f16a6a2d6fdaa8ccef8690ddefea.webp" alt="bugatti" position="center">
+
+    </div>
+
+    <div class="title-shine">$30m - $100m</div>
+
+        <div class="pacifico-regular title-shine">
+
+       <ul><li> Estimated Value: Analysts and experts place the value above $100 million due to its rarity and legendary status.</li>
+
+<li>The Car: It was the personal car of Jean Bugatti and is considered a "lost Nazi treasure".</li>
+
+<li>Other Atlantics: While the lost car is worth a projected $100M+, surviving models have previously sold for over $30 million to $40 million. 
+
+       
+
+        </li></ul>
+
+        
+
+        </div>      
+
+        </section>
+
+        <section class="car-cards-container">
+
+<div class="shine-text">Pagani Zonda HP barchetta</div>
+
+    <div class="car-card">
+
+        <img src="https://i.postimg.cc/76D7rNpB/l142_17811532358681.jpg" alt="pagani" position="center">
+
+    </div>
+
+    <div class="title-shine">$16m - $18m</div>
+
+        <div class="pacifico-regular title-shine">
+
+       <ul><li> Highest Sale Price: $70 million+ (Private sale, 2018).</li>
+
+<li>Highest Auction Price: $51.7 million (Late 2024).</li>
+
+<li><The Buyer: The 2018 record-holder was reportedly bought by David MacNeil, founder of WeatherTech.</li>
+
+<li>Key Features: These vehicles were built between 1962 and 1964 for racing, featuring 3.0-liter V12 engines and rare, hand-crafted bodies.</li>
+
+<li>Provenance: Top-tier examples often include race wins like the Tour de France and high finishes at Le Mans </li></ul>
+
+        
+
+        </div>
+
+              
+
+        </section>
+
+        <section class="car-cards-container">
+
+<div class="shine-text">Koenigsegg one : 1</div>
+
+    <div class="car-card">
+
+        <img src="https://i.postimg.cc/nrhDChVm/koenigsegg_one1_live_photos_2014_geneva_motor_show_100458543.jpg" alt="koenigsegg" position="center">
+
+    </div>
+
+    <div class="title-shine">$7m - $10m</div>
+
+        <div class="pacifico-regular title-shine">
+
+       <ul><li> Extreme Exclusivity: Only seven examples were produced (including one prototype), making it one of the rarest modern hypercars.</li>
+
+<li>1:1 Power-to-Weight Ratio: It was the first production car to achieve a 1-megawatt (1,360 hp) power output for a 1,360 kg curb weight (1 PS per 1 kg), earning it the "megacar" title.</li>
+
+<li>Bespoke Engineering: Features custom-developed parts like 3D-printed titanium exhaust components, active aerodynamics, and full carbon fiber wheels.</li>
+
+<li>Track Performance: Engineered to produce 610 kg of downforce at 160 mph, allowing it to corner at 2g.</li>
+
+<li>Rapid Appreciation: Because it represents a significant milestone in automotive history, the value of the One:1 has risen significantly over time, often doubling or tripling its original price in private sales.</li>
+
+<li>"Megacar" Status: It was designed to outperform everything on the road, with a top speed theoretically over 270 mph (440 km/h).  </li></ul>
+
+        
+
+        </div>
+
+        </section>
+
+        <!-- FEATURED CAR -->
+
+<section class="featured-car">
+
+    <h2 class="featured-title">LUXURY AND ELEGANCE</h2>
+
+    <div class="featured-box">
+
+        <img src="https://i.postimg.cc/mZ96Vp8D/1772853947079-removebg-preview.png" alt="Bugatti Chiron">
+
+        <div class="featured-text">
+
+            <h3>LUXURY AND ELEGANCE</h3>
+
+            <p>
+
+               If you want to have a premium website like this , then contact us
+
+            </p>
+
+        </div>
+
+    
+
+</section>
+
+<!-- FOOTER -->
+
+<section class="contact">
+
+<footer id="contact">
+
+</section>
+
+<footer class="footer">
+
+<h3>Contact Us</h3>
+
+<p>Email:
+
+<a href="mailto:cantwait037@gmail.com">
+
+cantwait037@email.com
+
+</a>
+
+</p>
+
+<p class="copy">
+
+© 2026 Luxury Cars Website. All Rights Reserved.
+
+</p>
+
+<p>
+
+    Creator : Aryan kumar singh
+
+</p>
+
+<p>ALL THE IMAGES IN THIS WEBSITE ARE HOSTED BY <a href="https://postimages.org/">POST IMAGES.</a </p>
+
+</footer>      
+
+<script>
+
+// GOLD PARTICLES
+
+const container = document.createElement("div");
+
+container.id = "particles";
+
+document.body.appendChild(container);
+
+for(let i = 0; i < 40; i++){
+
+    let particle = document.createElement("div");
+
+    particle.classList.add("particle");
+
+    particle.style.left = Math.random()*100 + "vw";
+
+    particle.style.animationDuration = (5 + Math.random()*5) + "s";
+
+    particle.style.animationDelay = Math.random()*5 + "s";
+
+    container.appendChild(particle);
+
+}
+
+// CAR CARD CLICK SHINE
+
+document.querySelectorAll(".car-card").forEach(card=>{
+
+    card.addEventListener("click", ()=>{
+
+        card.classList.add("active");
+
+        setTimeout(()=>{ card.classList.remove("active"); }, 1000);
+
+    });
+
+});
+
+function openMenu(){
+
+let menu = document.getElementById("sideMenu");
+
+if(menu.style.left === "0px"){
+
+menu.style.left = "-250px";
+
+}else{
+
+menu.style.left = "0px";
+
+}
+
+}
+
+document.querySelectorAll(".car-img").forEach(img=>{
+
+img.onload=()=>{
+
+img.classList.add("loaded");
+
+};
+
+});
+
+</script>
+
+ 
+
+    </body>
+
+</html>
+    
+  </body>
+  
+</html>
