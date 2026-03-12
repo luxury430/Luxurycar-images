@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!-- FAQ SECTION -->
+
+<section class="faq-section">
+
+  <h2 class="faq-title">Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+
+    <button class="faq-question">What are the most expensive cars in the world?</button>
+
+    <div class="faq-answer">
+
+      The most expensive cars include brands like Bugatti, Rolls Royce, and Pagani. Prices can exceed several million dollars depending on rarity and customization.
+
+    </div>
+
+  </div>
+
+  <div class="faq-item">
+
+    <button class="faq-question">Which car holds the speed record?</button>
+
+    <div class="faq-answer">
+
+      The Bugatti Chiron Super Sport 300+ holds one of the fastest production car records with speeds exceeding 300 mph.
+
+    </div>
+
+  </div>
+
+  <div class="faq-item">
+
+    <button class="faq-question">What is a hypercar?</button>
+
+    <div class="faq-answer">
+
+      Hypercars are top-tier performance vehicles combining extreme speed, luxury, and advanced engineering beyond supercars.
+
+    </div>
+
+  </div>
+
+  <div class="faq-item">
+
+    <button class="faq-question">Can I buy a limited edition car online?</button>
+
+    <div class="faq-answer">
+
+      Some manufacturers offer online reservations or special auctions, but most rare cars are sold through official dealers or private networks.
+
+    </div>
+
+  </div>
+
+  <div class="faq-item">
+
+    <button class="faq-question">Which concept cars will be released soon?</button>
+
+    <div class="faq-answer">
+
+      Major brands like Lamborghini, Ferrari, and Mercedes reveal concept cars annually at auto shows, showcasing futuristic designs and technologies.
+
+    </div>
+
+  </div>
+
+  <div class="faq-item">
+
+    <button class="faq-question">If you have more questions then contact us</button>
+
+    <div class="faq-answer">
+
+      <a href="mailto:cantwait037@gmail.com">CLICK HERE TO SEND G-MAIL</a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* FAQ SECTION */
+
+.faq-section {
+
+    background:#111;
+
+    padding:60px 20px;
+
+    max-width:900px;
+
+    margin:0 auto;
+
+    border-radius:15px;
+
+    box-shadow:0 0 20px rgba(255,215,0,0.2);
+
+    outline: none;
+
+-webkit-tap-highlight-color: transparent
+
+}
+
+.faq-title {
+
+    text-align:center;
+
+    font-size:36px;
+
+    color:gold;
+
+    margin-bottom:40px;
+
+    text-shadow:0 0 8px rgba(255,215,0,0.7);
+
+    outline: none;
+
+-webkit-tap-highlight-color: transparent
+
+}
+
+.faq-item {
+
+    margin-bottom:20px;
+
+    border-bottom:1px solid rgba(255,215,0,0.3);
+
+    outline: none;
+
+-webkit-tap-highlight-color: transparent
+
+}
+
+.faq-question {
+
+    width:100%;
+
+    text-align:left;
+
+    background:transparent;
+
+    border:none;
+
+    outline:none;
+
+    font-size:20px;
+
+    color:#ffd700;
+
+    padding:15px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+.faq-question:hover {
+
+    color:#ff4d4d; /* Blood red glow on hover */
+
+    text-shadow:0 0 10px #ff4d4d;
+
+}
+
+.faq-answer {
+
+    display:none;
+
+    padding:10px 15px 20px;
+
+    color:white;
+
+    font-size:16px;
+
+    line-height:1.6;
+
+}
+
+</style>
+
+<script>
+
+// Collapsible FAQ
+
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach(q => {
+
+    q.addEventListener('click', () => {
+
+        const answer = q.nextElementSibling;
+
+        const isVisible = answer.style.display === "block";
+
+        // Hide all answers
+
+        document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+
+        // Toggle current
+
+        answer.style.display = isVisible ? "none" : "block";
+
+    });
+
+});
+
+</script>
+    
+  </body>
+  
+</html>
