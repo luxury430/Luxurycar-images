@@ -1,0 +1,2744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+
+<html>
+
+<head>
+
+<!-- BASIC SEO -->
+
+<title>Luxury Cars Gallery | Ferrari, Lamborghini, Bugatti Images</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Explore a premium gallery of luxury cars including Ferrari, Lamborghini, Bugatti, McLaren and Porsche. Download high quality supercar images and wallpapers.">
+
+<meta name="keywords" content="luxury cars, supercars, ferrari images, lamborghini photos, bugatti wallpaper, mclaren cars, porsche gallery, exotic cars, hypercars">
+
+<meta name="author" content="Aryan Kumar Singh">
+
+<meta name="robots" content="index, follow">
+
+<!-- OPEN GRAPH (SOCIAL MEDIA PREVIEW) -->
+
+<meta property="og:title" content="Luxury Cars Gallery">
+
+<meta property="og:description" content="Browse high quality images of Ferrari, Lamborghini, Bugatti and other luxury supercars.">
+
+<meta property="og:type" content="website">
+
+<meta property="og:url" content="https://luxury430.github.io/Luxury-cars/">
+
+<meta property="og:image" content="https://i.postimg.cc/3NWG3npT/Bugatti-Chiron-Super-Sport-Golden-Era.jpg">
+
+<!-- TWITTER PREVIEW -->
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title" content="Luxury Cars Gallery">
+
+<meta name="twitter:description" content="Premium collection of Ferrari, Lamborghini, Bugatti and other supercars.">
+
+<meta name="twitter:image" content="https://i.postimg.cc/3NWG3npT/Bugatti-Chiron-Super-Sport-Golden-Era.jpg">
+
+<!-- FAVICON -->
+
+<link rel="icon" href="https://i.postimg.cc/3NWG3npT/Bugatti-Chiron-Super-Sport-Golden-Era.jpg" type="image/png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+.car-image-card img{
+
+opacity:0;
+
+transition:0.5s;
+
+}
+
+#searchBar{
+
+padding:10px;
+
+border-radius:25px;
+
+border:none;
+
+outline:none;
+
+background:rgba(255,255,255,0.2);
+
+backdrop-filter:blur(10px);
+
+color:white;
+
+}
+
+.car-image-card img.loaded{
+
+opacity:1;
+
+}
+
+.car-gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+gap:15px;
+
+}
+
+.car-img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+cursor:pointer;
+
+border-radius:10px;
+
+transition:0.3s;
+
+}
+
+.car-img:hover{
+
+transform:scale(1.05);
+
+}
+
+/* viewer */
+
+.viewer{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,0.9);
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+z-index:1000;
+
+}
+
+.viewer img{
+
+max-width:90%;
+
+max-height:70%;
+
+border-radius:10px;
+
+}
+
+.close{
+
+position:absolute;
+
+top:20px;
+
+right:30px;
+
+font-size:35px;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+.download-btn{
+
+margin-top:20px;
+
+padding:10px 20px;
+
+background:gold;
+
+color:black;
+
+text-decoration:none;
+
+border-radius:6px;
+
+font-weight:bold;
+
+}
+
+.car-img{
+
+outline: none;
+
+-webkit-tap-highlight-color: transparent;
+
+}
+
+.car-card{
+
+-webkit-tap-highlight-color: transparent;
+
+}
+
+.viewer-buttons{
+
+margin-top:20px;
+
+display:flex;
+
+gap:20px;
+
+}
+
+#likeBtn{
+
+font-size:24px;
+
+background:none;
+
+border:none;
+
+cursor:pointer;
+
+transition:0.3s;
+
+align-items:left;
+
+left:20px;
+
+}
+
+#likeBtn.active{
+
+color:red;
+
+transform:scale(1.3);
+
+outline:none;
+
+-webkit-tap-highlight-color:transparent;
+
+}
+
+.oleo-script-regular {
+
+  font-family: "Oleo Script", system-ui;
+
+  font-weight: 400;
+
+  font-size:30px;
+
+  position:absolute;
+
+}
+
+.oleo-script-bold {
+
+  font-family: "Oleo Script", system-ui;
+
+  font-weight: 700;
+
+  font-style: normal;
+
+}
+
+body{
+
+font-family:Arial;
+
+}
+
+.pacifico-regular{
+
+    font-size:20px;
+
+}
+
+/* NAVBAR */
+
+.bar{
+
+position:fixed;
+
+top:0;
+
+width:100%;
+
+height:80px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(0,0,0,0.4);
+
+backdrop-filter:blur(10px);
+
+z-index:1000;
+
+}
+
+.bar a{
+
+color:white;
+
+margin:20px;
+
+text-decoration:none;
+
+font-size:18px;
+
+transition:0.3s;
+
+}
+
+.bar a:hover{
+
+color:gold;
+
+}
+
+/* HERO */
+
+.img1{
+
+height:100vh;
+
+background-image:url("https://i.postimg.cc/TPV2XGZX/pngtree_3d_illusion_of_black_and_gold_abstract_background_image_3676464.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+color:white;
+
+text-align:center;
+
+width:150px:
+
+}
+
+.car-card:hover{
+
+transform:rotateY(10deg) scale(1.1);
+
+box-shadow:0 20px 40px rgba(0,0,0,0.5);
+
+}
+
+.dark{
+
+background:black;
+
+color:white;
+
+}
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(50px);
+
+transition:all 1s ease;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+.slider{
+
+background:black;
+
+padding:60px;
+
+text-align:center;
+
+color:white;
+
+}
+
+.slide-track{
+
+display:flex;
+
+gap:40px;
+
+animation:scroll 20s linear infinite;
+
+}
+
+.slide-track img{
+
+width:300px;
+
+border-radius:10px;
+
+}
+
+@keyframes scroll{
+
+0%{transform:translateX(0);}
+
+100%{transform:translateX(-100%);}
+
+}
+
+.welcome {
+
+  /* Typography & Spacing */
+
+  display: inline-block;
+
+  font-size: 18px;             /* Slightly smaller is often classier */
+
+  font-weight: 600;
+
+  letter-spacing: 5px;         /* Increased for that 'luxury brand' look */
+
+  text-transform: uppercase;
+
+  color: #D4AF37;
+
+  padding: 18px 50px;          /* Balanced padding for a pill shape */
+
+  margin-top: 60px;
+
+  cursor: pointer;
+
+  position: relative;
+
+  text-decoration: none;
+
+  /* Border & Shape */
+
+  border: 1.5px solid #D4AF37; 
+
+  border-radius: 50px;         
+
+  background: rgba(0, 0, 0, 0.4); /* Subtle dark tint to help text pop */
+
+  backdrop-filter: blur(5px);  /* Frosted glass effect over your background */
+
+  /* The Premium Glow */
+
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2), 
+
+              inset 0 0 10px rgba(212, 175, 55, 0.1);
+
+  
+
+  /* Smooth Animation */
+
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
+  animation: premium-pulse 1s ease-in-out infinite alternate;
+
+}
+
+/* Hover Effect for Interactivity */
+
+.welcome:hover {
+
+  background: #D4AF37;
+
+  color: #000;                 /* Flip colors on hover */
+
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+
+  transform: translateY(-3px);
+
+}
+
+/* Sophisticated Pulse Animation */
+
+@keyframes premium-pulse {
+
+  0% {
+
+    transform: translateY(0);
+
+    border-color: #D4AF37;
+
+  }
+
+  100% {
+
+    transform: translateY(-100px); /* Gentle float instead of a hard bounce */
+
+    border-color: #F7E7CE;        /* Shifts to a brighter champagne gold */
+
+  }
+
+}
+
+@keyframes bouncing{
+
+0%{
+
+bottom:0;
+
+box-shadow:0 0 5px 
+
+}
+
+100%{
+
+bottom:90px;
+
+box-shadow:0 50px 50px rgba(99,76,26,0.1);
+
+}
+
+}
+
+.main-text {
+
+  margin-top: 40px;
+
+  text-align: center;
+
+  /* Premium Font Stack */
+
+  font-family: 'oleo-script',regular
+
+  line-height: 1.8; /* Adds "breathing room" between lines */
+
+}
+
+.main-text p {
+
+  /* Soft Champagne Gold to match the background highlights */
+
+  color: #F7E7CE; 
+
+  font-size: 18px;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 10px;
+
+  
+
+  /* Text Shadow: This is the secret to making text readable on dark backgrounds */
+
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+
+  
+
+  /* Subtle Fade-in Animation */
+
+  animation: fadeInText 2s ease-in;
+
+}
+
+/* Optional: Make the "Please give your feedback" line stand out */
+
+.main-text p:last-child {
+
+  color: #D4AF37; /* Brighter Gold */
+
+  font-weight: bold;
+
+  font-style: italic;
+
+  margin-top: 20px;
+
+}
+
+@keyframes fadeInText {
+
+  from { opacity: 0; transform: translateY(20px); }
+
+  to { opacity: 1; transform: translateY(0); }
+
+}
+
+/* PARALLAX SECTION */
+
+.hero{
+
+height:60vh;
+
+background-image:url("https://i.postimg.cc/nVKWHrTc/3_i_Phone_Kawaii_Cute_Galaxy_Purple_Wallpaper_4k_HD.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+background-attachment:fixed;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+font-size:40px;
+
+}
+
+/* LUXURY CARS */
+
+.cars{
+
+background:#111;
+
+color:white;
+
+text-align:center;
+
+padding:80px 20px;
+
+}
+
+.cars h2{
+
+font-size:40px;
+
+margin-bottom:40px;
+
+font-size:40px;
+
+margin-bottom:40px;
+
+letter-spacing:3px;
+
+background:linear-gradient(90deg,gold,orange,gold);
+
+background-size:200%;
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+animation:goldMove 3s linear infinite;
+
+}
+
+@keyframes goldMove{
+
+0%{background-position:0%;}
+
+100%{background-position:200%;}
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+.bar a:hover{
+
+color:gold;
+
+text-shadow:0 0 10px gold,0 0 20px gold;
+
+}
+
+.car-container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit, minmax(180px,1fr));
+
+gap:20px;
+
+padding:15px;
+
+transition:all 0.4s ease;
+
+}
+
+@media (min-width:1001px){
+
+.car-container{
+
+grid-template-columns:repeat(4,1fr);
+
+}
+
+}
+
+@media (min-width:601px) and (max-width:1000px){
+
+.car-container{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+}
+
+@media (max-width:600px){
+
+.car-container{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:12px;
+
+}
+
+}
+
+*{
+
+box-sizing:border-box;
+
+}
+
+body{
+
+margin:0;
+
+overflow-x:hidden;
+
+}
+
+.car-card{
+
+background:#222;
+
+border-radius:10px;
+
+padding:10px;
+
+transition:0.6s;
+
+transform-style:preserve-3d;
+
+perspective:1000px;
+
+width:100%;
+
+box-sizing:border-box;
+
+}
+
+.car-card:hover{
+
+transform:rotateY(15deg) rotateX(5deg) scale(1.05);
+
+box-shadow:0 30px 50px rgba(0,0,0,0.7);
+
+}
+
+.car-card img{
+
+width:100%;
+
+height:250px;
+
+border-radius:10px;
+
+width:100%;
+
+border-radius:10px;
+
+transition:0.5s;
+
+}
+
+.car-card:hover img{
+
+transform:scale(1.1);
+
+filter:brightness(1.2);
+
+}
+
+.car-card:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 20px rgba(255,255,255,0.3);
+
+}
+
+/* FOOTER */
+
+.footer{
+
+background:black;
+
+color:white;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:40px;
+
+}
+
+.footer a{
+
+color:white;
+
+text-decoration:none;
+
+}
+
+.copy{
+
+margin-top:15px;
+
+font-size:14px;
+
+color:lightgray;
+
+}
+
+/* SHOWROOM EFFECT */
+
+.car-card{
+
+background:#222;
+
+border-radius:10px;
+
+width:250px;
+
+padding:20px;
+
+transition:0.4s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.car-card img{
+
+width:100%;
+
+border-radius:10px;
+
+transition:0.4s;
+
+}
+
+/* zoom effect */
+
+.car-card:hover img{
+
+transform:scale(1.15);
+
+}
+
+p:hover p{
+
+    transform:scale(1.5)
+
+    font-family:pacifico-regular;
+
+}
+
+/* glowing border */
+
+.car-card:hover{
+
+box-shadow:0 0 25px purple;
+
+transform:translateY(-10px);
+
+}
+
+/* title animation */
+
+.cars h2{
+
+font-size:40px;
+
+margin-bottom:40px;
+
+letter-spacing:2px;
+
+animation:fadeIn 2s ease;
+
+background:linear-gradient(90deg,gold,orange,gold);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+animation:goldMove 3s linear infinite;
+
+}
+
+@keyframes fadeIn{
+
+0%{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+h1{
+
+    margin-top:2px;
+
+   align-items:center;
+
+    color:white;
+
+    font-family:pacifico-regular, cursive;
+
+}
+
+.golden{
+
+    margin-top:
+
+    position:absolute;
+
+    font-size:50px;
+
+    font-color: rgba(255,215,0,1)
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.keyword{
+
+    margin-top:-680px;
+
+    position:absolute;
+
+    font-size:30px;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-color: rgba(255,215,0,1)
+
+}
+
+.logo{
+
+position:fixed;
+
+top:10px;
+
+left:80px;
+
+transform:translateX(-50%);
+
+z-index:2000;
+
+}
+
+.logo img{
+
+height:50px;
+
+width:auto;
+
+top:100px;
+
+left:238px;
+
+}
+
+.menu-icon{
+
+font-size:30px;
+
+cursor:pointer;
+
+color:white;
+
+position:fixed;
+
+left:20px;
+
+top:15px;
+
+z-index:1001;
+
+outline: none;
+
+-webkit-tap-highlight-color: transparent
+
+}
+
+.side-menu{
+
+position:fixed;
+
+top:0;
+
+left:-250px;
+
+width:250px;
+
+height:600px;
+
+background:black;
+
+padding-top:60px;
+
+transition:0.4s;
+
+z-index:1000;
+
+outline: none;
+
+-webkit-tap-highlight-color: transparent
+
+}
+
+.side-menu a{
+
+display:block;
+
+color:white;
+
+padding:15px;
+
+text-decoration:none;
+
+font-size:18px;
+
+outline: none;
+
+-webkit-tap-highlight-color: transparent
+
+}
+
+.side-menu a:hover{
+
+background:#333;
+
+outline: none;
+
+-webkit-tap-highlight-color: transparent
+
+}
+
+.car-card{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.car-card{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.car-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-100%;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(
+
+120deg,
+
+transparent,
+
+rgba(255,215,0,0.2),
+
+rgba(255,223,80,0.8),
+
+rgba(255,215,0,0.2),
+
+transparent
+
+);
+
+transition:0.7s;
+
+}
+
+.car-card:hover::before{
+
+left:100%;
+
+}
+
+}
+
+.car-card img{
+
+opacity:0;
+
+transform:scale(0.9);
+
+transition:0.7s;
+
+}
+
+.car-card img.loaded{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+.title2{
+
+font-size:40px;
+
+font-weight:bold;
+
+background:linear-gradient(
+
+90deg,
+
+#ffd700,
+
+#fff2a8,
+
+#ffd700
+
+);
+
+background-size:200%;
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+animation:goldShine 3s linear infinite;
+
+}
+
+@keyframes goldShine{
+
+0%{
+
+background-position:-200%;
+
+}
+
+100%{
+
+background-position:200%;
+
+}
+
+}
+
+.title2{
+
+text-shadow:0 0 10px rgba(255,215,0,0.7);
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+background:linear-gradient(
+
+180deg,
+
+#000000,
+
+#0a0a0a,
+
+#111111
+
+);
+
+color:white;
+
+}
+
+button{
+
+background:linear-gradient(45deg,#d4af37,#ffd700);
+
+border:none;
+
+padding:10px 20px;
+
+border-radius:30px;
+
+color:black;
+
+font-weight:bold;
+
+transition:0.4s;
+
+}
+
+button:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 15px rgba(255,215,0,0.7);
+
+}
+
+body{
+
+background:linear-gradient(
+
+180deg,
+
+#000,
+
+#0b0b0b,
+
+#111
+
+);
+
+}
+
+.footer{
+
+background:#0a0a0a;
+
+padding:40px 20px;
+
+text-align:center;
+
+color:#ccc;
+
+border-top:1px solid rgba(255,215,0,0.2);
+
+}
+
+.footer h3{
+
+color:#ffd700;
+
+letter-spacing:2px;
+
+}
+
+.footer a{
+
+color:#ffd700;
+
+text-decoration:none;
+
+}
+
+#particles{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+z-index:0;
+
+}
+
+.particle{
+
+position:absolute;
+
+width:6px;
+
+height:6px;
+
+background:gold;
+
+border-radius:50%;
+
+opacity:0.8;
+
+animation:floatUp linear infinite;
+
+}
+
+@keyframes floatUp{
+
+0%{
+
+transform:translateY(100vh);
+
+opacity:0;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-10vh);
+
+opacity:0;
+
+}
+
+}
+
+.car-card{
+
+background:#1a1a1a;
+
+border-radius:12px;
+
+padding:15px;
+
+transition:transform 0.2s ease;
+
+transform-style:preserve-3d;
+
+will-change:transform;
+
+}
+
+.prev, .next{
+
+position:absolute;
+
+top:50%;
+
+transform:translateY(-50%);
+
+font-size:40px;
+
+color:white;
+
+cursor:pointer;
+
+padding:10px;
+
+user-select:none;
+
+}
+
+.prev{
+
+left:20px;
+
+}
+
+.next{
+
+right:20px;
+
+}
+
+.prev:hover, .next:hover{
+
+color:gold;
+
+}
+
+.prev:hover,
+
+.next:hover{
+
+color: gold;
+
+text-shadow: 0 0 10px gold;
+
+}
+
+.prev,
+
+.next{
+
+outline: none;
+
+-webkit-tap-highlight-color: transparent;
+
+}
+
+.brands{
+
+text-align:center;
+
+padding:60px 20px;
+
+background:#111;
+
+}
+
+.brand-title{
+
+font-size:32px;
+
+color:gold;
+
+margin-bottom:30px;
+
+}
+
+.brand-container{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:40px;
+
+}
+
+.brand-container img{
+
+width:80px;
+
+transition:0.4s;
+
+}
+
+.brand-container img:hover{
+
+filter:grayscale(0%);
+
+transform:scale(1.2);
+
+}
+
+.featured-car{
+
+background:#111;
+
+padding:60px 20px;
+
+text-align:center;
+
+}
+
+.featured-title{
+
+font-size:34px;
+
+color:gold;
+
+margin-bottom:40px;
+
+}
+
+.featured-box{
+
+display:flex;
+
+flex-wrap:wrap;
+
+align-items:center;
+
+justify-content:center;
+
+gap:40px;
+
+}
+
+.featured-box img{
+
+width:320px;
+
+max-width:90%;
+
+border-radius:15px;
+
+box-shadow:0 0 20px rgba(255,215,0,0.5);
+
+}
+
+.featured-text{
+
+max-width:400px;
+
+color:white;
+
+font-size:18px;
+
+line-height:1.6;
+
+}
+
+#loader{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:black;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9999;
+
+}
+
+.loader-text{
+
+font-size:50px;
+
+font-weight:bold;
+
+letter-spacing:3px;
+
+background: linear-gradient(
+
+90deg,
+
+#8a6a00,
+
+#ffd700,
+
+#fff4b0,
+
+#ffd700,
+
+#8a6a00
+
+);
+
+background-size:200% auto;
+
+color:transparent;
+
+-webkit-background-clip:text;
+
+background-clip:text;
+
+animation: goldShine 3s linear infinite;
+
+text-shadow:
+
+0 0 10px #FFD700,
+
+0 0 20px #FFC400;
+
+}
+
+@keyframes goldShine{
+
+0%{
+
+background-position:-200% center;
+
+}
+
+100%{
+
+background-position:200% center;
+
+}
+
+}
+
+.title-shine{
+
+font-size:50px;
+
+font-weight:bold;
+
+text-align:center;
+
+background: linear-gradient(
+
+90deg,
+
+#8a6a00,
+
+#ffd700,
+
+#fff4b0,
+
+#ffd700,
+
+#8a6a00
+
+);
+
+background-size:200% auto;
+
+color:transparent;
+
+-webkit-background-clip:text;
+
+background-clip:text;
+
+animation: shine 4s linear infinite;
+
+}
+
+@keyframes shine{
+
+0%{
+
+background-position:-200% center;
+
+}
+
+100%{
+
+background-position:200% center;
+
+}
+
+}
+
+.tagline{
+
+color:#ccc;
+
+text-align:center;
+
+font-size:18px;
+
+letter-spacing:2px;
+
+margin-top:10px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="loader">
+
+<h1 class="loader-text">Luxury Cars</h1>
+
+</div>
+
+<div id="particles"></div>
+
+<div class="logo">
+
+<img src="https://i.postimg.cc/LXypHsv9/1772853947079-removebg-preview.png">
+
+</div>
+
+<!-- TOP NAVBAR -->
+
+<div class="bar">
+
+<nav>
+
+<div id="sideMenu" class="side-menu">
+
+<a href="#">Home</a>
+
+<a href="#cars">Cars</a>
+
+<a href="#gallery">Gallery</a> 
+
+<a href="#contact">Contact</a>
+
+<a href="second-page.html" target="_blank" rel="noopener norferrer">Unique Cars</a>
+
+<a href="third-page.html" target="_blank" rel="noopener noreferrer">Most expensive cars from each brand</a>
+
+<a href="fourth-page.html" target="_blank" rel="noopener noreferrer">FAQ's</a>
+
+</nav>
+
+<section class="banner">
+
+<div class="banner-content">
+
+<h1>Luxury Car Collection</h1>
+
+<a href="#cars" class="banner-btn">Explore Cars</a>
+
+</div>
+
+</section>
+
+<nav>
+
+<div class="menu-icon" onclick="openMenu()">
+
+☰
+
+</div>
+
+<a href="https://google.com">Google</a>
+
+<button onclick="darkMode()">darkMode </button>
+
+</nav>
+
+</div>
+
+<!-- FIRST SECTION -->
+
+<section class="img1">
+
+<span>
+
+<div class="welcome">WELCOME</div>
+
+</span>
+
+<div class="pacifico-regular">
+
+<div class="main-text">
+
+<div class="pacifico-regular">
+
+<p>This website is made for public use</p>
+
+<p>Thanks for visiting us</p>
+
+<p>We are pleased this website is useful</p>
+
+<p>Please give your feedback</p>
+
+<img src="https://i.postimg.cc/LXypHsv9/1772853947079-removebg-preview.png" width="200" shape="circular">
+
+</div>
+
+</section>
+
+<!-- LUXURY CAR SECTION -->
+
+<div id="cars"></div>
+
+<section class="cars">
+
+<input type="text" id="searchBar" placeholder="Search luxury cars...">
+
+<h1 class="title2">Luxury makes you feel premium</h1>
+
+<h2 class="golden">Luxury Cars</h2>
+
+<p class="tagline">Explore the World's Most Powerful Machines</p>
+
+<h1 class="title-shine">Timeless elegance</h1>
+
+<div class="car-container">
+
+<div class="car-card" data-name="lamborghini">
+
+    <img src="https://i.postimg.cc/sXK43Qhv/0a4001ea813016e098eacb4de7cc976f.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="ferrari">
+
+    <img src="https://i.postimg.cc/KjzrjG7c/05f40d916028dbb3bd4cf3f3e4fa3d2f.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="koenigsegg">
+
+    <img src="https://i.postimg.cc/D0MQb95Z/17dd4ca0c7bc7b1e3437a285e72b0d2a.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="koenigsegg">
+
+    <img src="https://i.postimg.cc/D0MQb95Z/17dd4ca0c7bc7b1e3437a285e72b0d2a.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="bugatti">
+
+    <img src="https://i.postimg.cc/wMG5sCFq/1a63e0fc65fd0ed588e77803d77150c1.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="pagani">
+
+    <img src="https://i.postimg.cc/d3xRTbnk/23de19889dd4bd980a34f4937d98abb6_(1).jpg" class="car-img" loading="lazy">
+
+        
+
+    </div>
+
+<div class="car-card" data-name="bugatti">
+
+    <img src="https://i.postimg.cc/7h6MhH3s/2bf4ff85eef78a4d93e57c4578b81750.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="pagani">
+
+    <img src="https://i.postimg.cc/hv587kM8/271e09ee8ed05a3eda228c73809a515d.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="koenigsegg">
+
+    <img src="https://i.postimg.cc/Bb6cbS50/2cdcf0077f7ec2e275adc0b9e4e250b0.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="lamborghini">
+
+    <img src="https://i.postimg.cc/3R9F34vw/32178981f95e1fe4cc2c1e5bee2dbc44.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="ferrari">
+
+    <img src="https://i.postimg.cc/Gt2JtLFx/32546669b0b52303a4d13a8a6f35eb44.jpg" class="car-img" loading="lazy">
+
+        
+
+    </div>
+
+<div class="car-card" data-name="mclaren">
+
+    <img src="https://i.postimg.cc/bJL9qDtn/357f4ffb8aedc495b036d1e5c55c337c.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="bugatti">
+
+    <img src="https://i.postimg.cc/k4wv76bV/6466221ae4c31496bf745bccb4c4daf3.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="bugatti">
+
+    <img src="https://i.postimg.cc/k4wv76bV/6466221ae4c31496bf745bccb4c4daf3.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name=""BMW>
+
+    <img src="https://i.postimg.cc/cCb78pTQ/458b9994585427661b9203661d776c97.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="pagani">
+
+    <img src="https://i.postimg.cc/FzRgzrbQ/71d6c19ea62f8597315d658dc0c73711.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="bugatti">
+
+    <img src="https://i.postimg.cc/FzBbJMGv/9500eb86881aa50839b71ffde38caeb2.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="koenigsegg">
+
+    <img src="https://i.postimg.cc/Wz36zNmV/a278146a4b48c21382eed2624c0d99cd.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="bugatti">
+
+    <img src="https://i.postimg.cc/sXK43Qh7/d6580f6dea62306fe708c4e9facdee55.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="pagani">
+
+    <img src="https://i.postimg.cc/d1njJkyh/c2293f484dc9cce99d2bb21578526f30.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="pagani">
+
+    <img src="https://i.postimg.cc/8c0dr2wS/e8c6024f4c0e3fa3d0081a0b7794d02b.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="koenigsegg">
+
+    <img src="https://i.postimg.cc/8c5BcpRn/fb3ca5ce66d4ecff7782b18383520889.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="lamborghini">
+
+<img src="https://i.postimg.cc/YS9gd03N/2015_lamborghini_veneno_roadster.webp" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="bugatti">
+
+    <img src="https://i.postimg.cc/nVS969RD/5d8a3e9c81251497b78ac96f9fcdcccc.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="rolls royce">
+
+    <img src="https://i.postimg.cc/bYVSKSCD/5eecf262ad2139914ffdbc21ddc0df2d.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="mclaren">
+
+    <img src="https://i.postimg.cc/DyW4FfHP/66b2f6080947029de69e86a684da8cca.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="mercedes">
+
+    <img src="https://i.postimg.cc/D0NWsR4F/66ed6219ce04c0dabac072a6e857a411.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="apollo">
+
+    <img src="https://i.postimg.cc/05XKLKWB/696119c1ca72fa36fa17649e8e72ff40.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="bugatti">
+
+    <img src="https://i.postimg.cc/2j9LPLc2/7289a7855e3c5c8db3c7cb9a9bd69499.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="koenigsegg">
+
+    <img src="https://i.postimg.cc/ZK9vZY2V/73ab9001ef855de573803aaf42fc9162.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="koenigsegg">
+
+    <img src="https://i.postimg.cc/VsZ030GX/75ed492e218112fb4cb1d65d6c0ec677.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="pagani">
+
+    <img src="https://i.postimg.cc/66b4D4jR/856ce4b342dcf983d47827d90d38b296.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="mclaren">
+
+    <img src="https://i.postimg.cc/WzyDrxFx/85bb6c31e3932c1ca6d38017aea70c2d.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="BMW">
+
+    <img src="https://i.postimg.cc/59KQZQ75/86a6eac9916656e06b9d7bd3950317a2.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="koenigsegg">
+
+    <img src="https://i.postimg.cc/sDBGyfqH/8df93a00799f090db8ab40467c607981.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="rolls royce">
+
+    <img src="https://i.postimg.cc/Y2DLJLn4/8e6bc17e8e32f118f301eba556fa768c.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="pagani">
+
+    <img src="https://i.postimg.cc/kXVR9MzT/9e0c9fafb50c89d84d1b5b96e1e478f2.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="apollo">
+
+    <img src="https://i.postimg.cc/v82xpxqS/a97c813081b92b012ac51f7e24149cb0.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="mercedes">
+
+    <img src="https://i.postimg.cc/9Xgwvw8f/a9866d57c559b7f6b4792da2a425c734.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="mclaren">
+
+    <img src="https://i.postimg.cc/3rf0P0SL/af16f9836f72b2d227efce5f3f601305.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="rolls royce">
+
+    <img src="https://i.postimg.cc/mZp101X1/bff2cfb64ba0eb82ba8fa4a88410eb5c.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="rolls royce">
+
+    <img src="https://i.postimg.cc/2j9LPLcT/c0b697db548f9d93235f6ceeaba60a26.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="koenigseff">
+
+    <img src="https://i.postimg.cc/pVc5g5Gn/c7e8d9de9c705a0a862a7851bafcdae5.jpg" class="car-img" loading="lazy">
+
+    </div>
+
+<div class="car-card" data-name="rolls royce">
+
+    <img src="https://i.postimg.cc/2j9LPLc1/dab4ee7eed2b6e13947fcd123cc1ad05.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="mclaren">
+
+    <img src="https://i.postimg.cc/BQ8PsZkp/e3f3c4ad9e96c3e3a4caaa66176cdf24.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="rolls royce">
+
+    <img src="https://i.postimg.cc/sfHGtG6T/ebf65ac76be72798555aa048a2449d4f.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/KjWKLC32/019621da6ce64afe198b708d89184517.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/mZp101X9/270251aaeed07b1ec97d65b6e3a4fa01.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/66b4D4jq/52415c4dc29bfc0df08ca7b275f5e061.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/3Nqypz0h/5574ce3cd78c839a8974a8ef8164547e.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/TYy5G2Fk/32178981f95e1fe4cc2c1e5bee2dbc44.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/3rf0P0SW/16148d543dc84193c121cecb7e95a061.jpg" class="car-img" loading="lazy">
+
+    </div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/y6p3w3Q5/22b385b0ae2494ae90b9e4ffc851849f.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/RCpJjJsY/3f24ea8c7c105d06fa5c7574e24a58dc.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/c4KtZ12m/5cc2b5ea882f590594a510dcdf35c3f2.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+<img src="https://i.postimg.cc/fW8dpnqH/1962-ferrari-250-gto-3729gt-bianco-speciale-exterior-001-689243309f254.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+<img src="https://i.postimg.cc/0QmbByFP/chiron_super_sport_300_og.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+<img src="https://i.postimg.cc/rmtr2Jdj/Rolls_Royce_1692684754522_1692684754810.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/yNQhKcdT/Mercedes-1955-0000-72674-scaled-2.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+<img src="https://i.postimg.cc/rs6ryJLR/pagani_zonda_hp_barchetta_06dca_c616828122024164437_1.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/6pBCGY47/Bugatti_La_Voiture_Noire_9b40ce3bce.webp" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/cJ47PXsN/bugatti-chiron-super-sport-hermes-one-of-one-v0-728ptvwol6sb1.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/13Mw0wp5/Most_Expensive_Car_in_the_World_Bugatti_Centodieci_1160x730.webp" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/NMK6jF2G/394A2460-2-scaled.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/90hr5jHF/02_bug_progr_solit_2025_crop4.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/DZt1SDVR/Merc_W196_WEB_MOBILE.webp" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/qBy3m1Hh/koenigsegg_sadairs_spear_aurora_scandinavian_concours_world_premiere_designboom_01.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/28N4mP7g/1709547411685_12.webp" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/pVFDw2zh/2a95526a_f664_43ed_9928_d7ad9cc7dfe5.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/Njgm2mVD/Ferrari_330_P4_66188.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/0QmbByFv/Pagani_Huayra_R_Evo_Front_view.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/KYWMWVYY/Screenshot_20251108_083358_Google.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/0NhznwtX/Bugatti_Tourbillon_bespoke_pictures_2.webp" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/vmC4hVP3/sopro_17.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/sDYKLbN8/ferrari_812_competizione_2339_1.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/FHGpr3mL/Mansory_Centuria_(32415942937)_1.jpg" class="car-img"   loading="lazy">  
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/sft0qYDJ/G61Hd_E0XIAAPc_AC.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<div class="car-card" data-name="">
+
+    <img src="https://i.postimg.cc/yd2vqKBs/from_rrocainfo_jump_to_navigation_search_1a789.jpg" class="car-img" loading="lazy">
+
+</div>
+
+<!-- IMAGE VIEWER -->
+
+<div class="viewer" id="viewer">
+
+<span class="close" id="closeBtn">✕</span>
+
+<span class="prev" id="prevBtn">❮</span>
+
+<img id="viewer-img">
+
+<span class="next" id="nextBtn">❯</span>
+
+<a id="downloadBtn" download class="download-btn">Download</a>
+
+<button id="likeBtn">❤️</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+<h1 class="title">Welcome to My Website</h1>
+
+</section>
+
+<div class id="gallery"></div>
+
+<!-- SECOND IMAGE -->
+
+<!-- END OF CAR GALLERY -->
+
+<div id="gallery"></div>
+
+<section class="brands">
+
+<h2 class="brand-title">Top Luxury Brands</h2>
+
+<div class="brand-container">
+
+<img src="https://i.postimg.cc/tg1wVWGY/rolls_royce_logo_11551061380wexqupjdrb_removebg_preview.png">
+
+<img src="https://i.postimg.cc/VNSpbnPb/pagani_automobili_spa_logo_vector_11573940116thqf1o0yxx_removebg_preview.png">
+
+<img src="https://i.postimg.cc/QMBwW1Z5/koenigsegg_logo_vector_eps_ai_11573940113n8tsllrcjq_removebg_preview.png">
+
+<img src="https://i.postimg.cc/fb3p0mQY/hd_lamborghini_logo_transparent_background_701751694774898kpt0kfziis_removebg_preview.png">
+
+<img src="https://i.postimg.cc/8zXx5w9M/hd_ferrari_logo_transparent_background_701751694773105xaxoflrdiu_removebg_preview.png">
+
+<img src="https://i.postimg.cc/7LCdT0rN/hd_bugatti_logo_emblem_png_701751694709250gzffz3oyat_removebg_preview.png">
+
+<img
+
+src="https://i.postimg.cc/xdkhbMVR/aug4vu026_removebg_preview.png">
+
+</div>
+
+<section class="featured-car">
+
+<h2 class="featured-title">HIRE ME</h2>
+
+<div class="featured-box">
+
+<img src="https://i.postimg.cc/7LCdT0rN/hd_bugatti_logo_emblem_png_701751694709250gzffz3oyat_removebg_preview.png">
+
+<div class="featured-text">
+
+<h3>Bugatti Chiron</h3>
+
+<p>
+
+This website is made by a 16 tear old web developer and if you want a full customized business purpose professional premium website then , contact me
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+</section>
+
+<!-- FOOTER -->
+
+<section class="contact">
+
+<footer id="contact">
+
+<h2>Hire Me</h2>
+
+<p>If you want a website like this for your business, contact me.</p>
+
+<p>Email: yourname@email.com</p>
+
+<p>Phone: +91-XXXXXXXXXX</p>
+
+</section>
+
+<footer class="footer">
+
+<h3>Contact Us</h3>
+
+<p>Email:
+
+<a href="mailto:cantwait037@gmail.com">
+
+cantwait037@email.com
+
+</a>
+
+</p>
+
+<p class="copy">
+
+© 2026 Luxury Cars Website. All Rights Reserved.
+
+</p>
+
+<p>
+
+    Creator : Aryan kumar singh
+
+</p>
+
+<p>ALL THE IMAGES IN THIS WEBSITE ARE HOSTED BY <a href="https://postimages.org/">POST IMAGES.</a </p>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function darkMode(){
+
+document.body.classList.toggle("dark");
+
+}
+
+window.addEventListener("scroll", function(){
+
+let reveals = document.querySelectorAll(".reveal");
+
+reveals.forEach(function(el){
+
+let windowHeight = window.innerHeight;
+
+let elementTop = el.getBoundingClientRect().top;
+
+if(elementTop < windowHeight - 100){
+
+el.classList.add("active");
+
+}
+
+});
+
+});
+
+const searchBar = document.getElementById("searchBar");
+
+const cars = document.querySelectorAll(".car-card");
+
+searchBar.addEventListener("input", function(){
+
+let value = searchBar.value.toLowerCase();
+
+cars.forEach(function(car){
+
+let name = car.getAttribute("data-name");
+
+if(name && name.toLowerCase().includes(value)){
+
+car.style.display = "block";
+
+}
+
+else{
+
+car.style.display = "none";
+
+}
+
+});
+
+});
+
+function openMenu(){
+
+let menu = document.getElementById("sideMenu");
+
+if(menu.style.left === "0px"){
+
+menu.style.left = "-250px";
+
+}else{
+
+menu.style.left = "0px";
+
+}
+
+}
+
+document.querySelectorAll(".car-img").forEach(img=>{
+
+img.onload=()=>{
+
+img.classList.add("loaded");
+
+};
+
+});
+
+const images = document.querySelectorAll(".car-img");
+
+const viewer = document.getElementById("viewer");
+
+const viewerImg = document.getElementById("viewer-img");
+
+const downloadBtn = document.getElementById("downloadBtn");
+
+const closeBtn = document.getElementById("closeBtn");
+
+let currentIndex = 0;
+
+let startX = 0;
+
+// OPEN VIEWER
+
+images.forEach((img, index) => {
+
+img.addEventListener("click", () => {
+
+viewer.style.display = "flex";
+
+viewerImg.src = img.src;
+
+downloadBtn.href = img.src;
+
+currentIndex = index;
+
+});
+
+});
+
+// CLOSE VIEWER
+
+closeBtn.onclick = () => {
+
+viewer.style.display = "none";
+
+};
+
+// SHOW IMAGE FUNCTION
+
+function showImage(index){
+
+viewerImg.src = images[index].src;
+
+downloadBtn.href = images[index].src;
+
+}
+
+// SWIPE START
+
+viewer.addEventListener("touchstart", (e)=>{
+
+startX = e.touches[0].clientX;
+
+});
+
+// SWIPE END
+
+viewer.addEventListener("touchend", (e)=>{
+
+let endX = e.changedTouches[0].clientX;
+
+if(startX - endX > 50){
+
+currentIndex = (currentIndex + 1) % images.length;
+
+showImage(currentIndex);
+
+}
+
+if(endX - startX > 50){
+
+currentIndex = (currentIndex - 1 + images.length) % images.length;
+
+showImage(currentIndex);
+
+}
+
+});
+
+// DESKTOP ARROWS
+
+document.addEventListener("keydown", (e)=>{
+
+if(viewer.style.display === "flex"){
+
+if(e.key === "ArrowRight"){
+
+currentIndex = (currentIndex + 1) % images.length;
+
+showImage(currentIndex);
+
+}
+
+if(e.key === "ArrowLeft"){
+
+currentIndex = (currentIndex - 1 + images.length) % images.length;
+
+showImage(currentIndex);
+
+}
+
+}
+
+});
+
+const likeBtn = document.getElementById("likeBtn");
+
+likeBtn.addEventListener("click", () => {
+
+likeBtn.classList.toggle("active");
+
+});
+
+const container = document.getElementById("particles");
+
+for(let i = 0; i < 40; i++){
+
+let particle = document.createElement("div");
+
+particle.classList.add("particle");
+
+particle.style.left = Math.random()*100 + "vw";
+
+particle.style.animationDuration = (5 + Math.random()*5) + "s";
+
+particle.style.animationDelay = Math.random()*5 + "s";
+
+container.appendChild(particle);
+
+}
+
+const cards = document.querySelectorAll(".car-card");
+
+cards.forEach(card => {
+
+card.addEventListener("mousemove", (e) => {
+
+const rect = card.getBoundingClientRect();
+
+const x = e.clientX - rect.left;
+
+const y = e.clientY - rect.top;
+
+const centerX = rect.width / 2;
+
+const centerY = rect.height / 2;
+
+const rotateX = (y - centerY) / 10;
+
+const rotateY = (centerX - x) / 10;
+
+card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+});
+
+card.addEventListener("mouseleave", () => {
+
+card.style.transform = "rotateX(0) rotateY(0)";
+
+});
+
+});
+
+const nextBtn = document.querySelector(".next");
+
+const prevBtn = document.querySelector(".prev");
+
+nextBtn.onclick = () => {
+
+currentIndex = (currentIndex + 1) % images.length;
+
+showImage(currentIndex);
+
+};
+
+prevBtn.onclick = () => {
+
+currentIndex = (currentIndex - 1 + images.length) % images.length;
+
+showImage(currentIndex);
+
+};
+
+setTimeout(function(){
+
+document.getElementById("loader").style.opacity = "0";
+
+setTimeout(function(){
+
+document.getElementById("loader").style.display = "none";
+
+},800);
+
+},150);
+
+</script>
+
+</body>
+
+</html>
+    
+  </body>
+  
+</html>
